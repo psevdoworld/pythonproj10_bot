@@ -14,10 +14,10 @@ def get_category_keyboard():
         k.add(KeyboardButton(cat))
     return k
 
-def gen_markup(item_name):
+def gen_markup(item_id):
     markup = InlineKeyboardMarkup(row_width = 2)
     markup.add(
-        InlineKeyboardButton("да", callback_data="cb_yes_"+item_name),
-        InlineKeyboardButton("нет", callback_data="cb_no_"+item_name),
+        InlineKeyboardButton("купить", callback_data=f"cb_buy_{item_id}"),
+        InlineKeyboardButton("лайк", callback_data=f"cb_like_{item_id}"),
     )
     return markup
